@@ -60,5 +60,5 @@ if response[0] == 'y':
             print("word already in dictionary")
         add = input("any more additions(y/n)? ").lower()
         
-          
+    
     pickle.dump(dictionary, open("changing_dictionary.pkl", "wb"))
