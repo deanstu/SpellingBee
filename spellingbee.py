@@ -40,10 +40,10 @@ for word in words:
     print(word)
     
 response = input("any edits to the dictionary(y/n)? ").lower()
-if response == 'y':
+if response[0] == 'y':
         
     delete = input("remove any words from the dictionary(y/n)? ").lower()
-    while delete == 'y':
+    while delete[0] == 'y':
         deletion = input("word to be removed: ").lower()
         try:
             dictionary.remove(deletion)
@@ -52,7 +52,7 @@ if response == 'y':
         delete = input("any more removals(y/n)? ").lower()
         
     add = input("any additions to the dictionary(y/n)? ").lower()
-    while add == 'y':
+    while add[0] == 'y':
         addition = input("word to be added: ").lower()
         if addition not in dictionary:
             dictionary.append(addition)
