@@ -43,22 +43,27 @@ response = input("any edits to the dictionary(y/n)? ").lower()
 if response[0] == 'y':
         
     delete = input("remove any words from the dictionary(y/n)? ").lower()
-    while delete[0] == 'y':
+    
+    if delete[0] == 'y':
         deletion = input("word to be removed: ").lower()
-        try:
-            dictionary.remove(deletion)
-        except:
-            print(deletion, " not in dictionary")
-        delete = input("any more removals(y/n)? ").lower()
+        while deletion != "":
+            try:
+                dictionary.remove(deletion)
+            except:
+                print(deletion, " not in dictionary")
+            deletion = input("word to be removed: ").lower()
         
     add = input("any additions to the dictionary(y/n)? ").lower()
-    while add[0] == 'y':
+    if add[0] == 'y':
         addition = input("word to be added: ").lower()
-        if addition not in dictionary:
-            dictionary.append(addition)
-        else:
-            print("word already in dictionary")
-        add = input("any more additions(y/n)? ").lower()
+        while addition != "":
+            if addition not in dictionary:
+                dictionary.append(addition)
+            else:
+                print("word already in dictionary")
+            addition = input("word to be added: ").lower()
         
     
     pickle.dump(dictionary, open("changing_dictionary.pkl", "wb"))
+    
+print("thanks for playing")  
