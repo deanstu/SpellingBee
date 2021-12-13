@@ -10,9 +10,8 @@ in_file = open('changing_dictionary.pkl', 'rb')
 dictionary = pickle.load(in_file)
 in_file.close()
  
-alphabet = set(())   
-for word in dictionary:
-    alphabet.add(word[0])
+alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = set(alphabet_list)   
         
 def solver(letters, center):
     
