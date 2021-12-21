@@ -62,7 +62,7 @@ if response[0] == 'y':
                 print("word already in dictionary")
             addition = input("word to be added: ").lower()
         
-    
+    dictionary.sort()
     pickle.dump(dictionary, open("changing_dictionary.pkl", "wb"))
     
 print("thanks for playing")  
